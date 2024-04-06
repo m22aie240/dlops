@@ -1,6 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+
+# Data points
+random_values = [-3.5, -1.2, 0, 2.8, -4.1, 1.5, -0.7, 3.2, -2.4, 4.6]
+
 # Defining the activation functions
 def sigmoid(x):
     return 1 / (1 + np.exp(-x))
@@ -28,14 +32,22 @@ def tanh(x):
 # Generating values for plotting
 x = np.linspace(-10, 10, 100)
 
+# Apply sigmoid function to each data point
+sigmoid_results = list(map(sigmoid, random_values))
+
+# Print the results
+print("Sigmoid results:")
+for value, result in zip(random_values, sigmoid_results):
+    print(f"Sigmoid({value}) = {result}")
+
 # Plotting
-plt.figure(figsize=(14, 8))
+#plt.figure(figsize=(14, 8))
 
 # Sigmoid
-plt.subplot(2, 2, 1)
-plt.plot(x, sigmoid(x), label="Sigmoid")
-plt.title("Sigmoid Activation Function")
-plt.grid(True)
+#plt.subplot(2, 2, 1)
+#plt.plot(x, sigmoid(x), label="Sigmoid")
+#plt.title("Sigmoid Activation Function")
+#plt.grid(True)
 
 # ReLU
 <<<<<<< HEAD
@@ -75,6 +87,6 @@ plt.grid(True)
 >>>>>>> feature-2
 
 # Display all plots
-plt.tight_layout()
-plt.show()
+#plt.tight_layout()
+#plt.show()
 
